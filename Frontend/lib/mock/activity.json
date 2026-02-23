@@ -1,0 +1,23 @@
+[
+  {
+    "id": "a1",
+    "action": "Completed video: SaaS Growth Tactics",
+    "date": "2026-02-20",
+    "points": 120,
+    "status": "completed"
+  },
+  {
+    "id": "a2",
+    "action": "Daily streak bonus",
+    "date": "2026-02-21",
+    "points": 30,
+    "status": "completed"
+  },
+  {
+    "id": "a3",
+    "action": "Watched: Retention Framework",
+    "date": "2026-02-22",
+    "points": 150,
+    "status": "pending"
+  }
+]

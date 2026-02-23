@@ -1,0 +1,23 @@
+[
+  {
+    "id": "u1",
+    "name": "Amina Yusuf",
+    "email": "amina@vieworbit.com",
+    "role": "viewer",
+    "status": "active"
+  },
+  {
+    "id": "u2",
+    "name": "Daniel Briggs",
+    "email": "daniel@vieworbit.com",
+    "role": "channel-owner",
+    "status": "active"
+  },
+  {
+    "id": "u3",
+    "name": "Sara Kim",
+    "email": "sara@vieworbit.com",
+    "role": "admin",
+    "status": "suspended"
+  }
+]

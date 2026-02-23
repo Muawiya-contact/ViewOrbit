@@ -1,0 +1,10 @@
+:root {
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --border: #e2e8f0;
+}
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}

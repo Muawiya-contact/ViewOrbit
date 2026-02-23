@@ -1,0 +1,16 @@
+[
+  {
+    "id": "c1",
+    "channelName": "SaaS Sprint",
+    "owner": "Daniel Briggs",
+    "subscribers": 12840,
+    "status": "pending"
+  },
+  {
+    "id": "c2",
+    "channelName": "Startup Makers",
+    "owner": "Ola Benson",
+    "subscribers": 9820,
+    "status": "approved"
+  }
+]

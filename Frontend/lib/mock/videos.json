@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1",
+    "title": "10 Growth Tactics for New SaaS Channels",
+    "duration": "12:45",
+    "progress": 80,
+    "rewardPoints": 120,
+    "category": "Growth"
+  },
+  {
+    "id": "v2",
+    "title": "How to Increase Watch Time Organically",
+    "duration": "08:30",
+    "progress": 45,
+    "rewardPoints": 90,
+    "category": "Engagement"
+  },
+  {
+    "id": "v3",
+    "title": "Audience Retention Framework 2026",
+    "duration": "15:10",
+    "progress": 20,
+    "rewardPoints": 150,
+    "category": "Analytics"
+  }
+]

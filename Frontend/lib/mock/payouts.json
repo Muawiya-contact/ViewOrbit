@@ -1,0 +1,23 @@
+[
+  {
+    "id": "p1",
+    "user": "Amina Yusuf",
+    "amount": 120,
+    "requestedAt": "2026-02-18",
+    "status": "pending"
+  },
+  {
+    "id": "p2",
+    "user": "Daniel Briggs",
+    "amount": 340,
+    "requestedAt": "2026-02-17",
+    "status": "paid"
+  },
+  {
+    "id": "p3",
+    "user": "Sara Kim",
+    "amount": 210,
+    "requestedAt": "2026-02-16",
+    "status": "rejected"
+  }
+]
