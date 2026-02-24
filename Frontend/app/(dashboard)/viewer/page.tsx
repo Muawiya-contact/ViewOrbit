@@ -1,5 +1,6 @@
-import { ViewerDashboard } from "@/components/dashboard/viewer-dashboard";
+import { redirect } from "next/navigation";
+import { ROUTES } from "@/lib/constants/routes";
 
 export default function ViewerPage() {
-  return <ViewerDashboard />;
+  redirect(ROUTES.HOME);
 }

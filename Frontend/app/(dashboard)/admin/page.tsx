@@ -1,5 +1,6 @@
-import { AdminDashboard } from "@/components/dashboard/admin-dashboard";
+import { redirect } from "next/navigation";
+import { ROUTES } from "@/lib/constants/routes";
 
 export default function AdminPage() {
-  return <AdminDashboard />;
+  redirect(ROUTES.HOME);
 }

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { ROUTES } from "@/lib/constants/routes";
 
-export default function ChannelOwnerPage() {
-  redirect(ROUTES.HOME);
+export default function ServicePage() {
+  redirect(ROUTES.SUPPORT);
 }

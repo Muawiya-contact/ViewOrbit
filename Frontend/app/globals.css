@@ -3,12 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: 248 250 252;
-  --foreground: 15 23 42;
+  --background: 214 66% 11%;
+  --foreground: 210 40% 98%;
+  --card: 214 52% 18%;
+  --card-foreground: 210 40% 98%;
+  --border: 214 34% 27%;
+  --muted: 214 40% 18%;
+  --muted-foreground: 215 20% 75%;
+  --ring: 206 100% 56%;
+  --primary: 206 100% 56%;
+  --primary-foreground: 214 66% 11%;
+  --secondary: 214 36% 24%;
+  --secondary-foreground: 210 40% 98%;
+  --success: 160 84% 39%;
+  --success-foreground: 214 66% 11%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 20 14% 4%;
+  --pending: 206 72% 67%;
+  --pending-foreground: 214 66% 11%;
+  --danger: 0 72% 51%;
+  --danger-foreground: 0 0% 100%;
+}
+
+.dark {
+  --background: 214 66% 11%;
+  --foreground: 210 40% 98%;
+  --card: 214 52% 18%;
+  --card-foreground: 210 40% 98%;
+  --border: 214 34% 27%;
+  --muted: 214 40% 18%;
+  --muted-foreground: 215 20% 75%;
+  --ring: 206 100% 56%;
+  --primary: 206 100% 56%;
+  --primary-foreground: 214 66% 11%;
+  --secondary: 214 36% 24%;
+  --secondary-foreground: 210 40% 98%;
+  --success: 160 84% 39%;
+  --success-foreground: 214 66% 11%;
+  --warning: 43 96% 56%;
+  --warning-foreground: 20 14% 4%;
+  --pending: 206 72% 67%;
+  --pending-foreground: 214 66% 11%;
+  --danger: 0 72% 51%;
+  --danger-foreground: 0 0% 100%;
 }
 
 body {
-  color: rgb(var(--foreground));
-  background: rgb(var(--background));
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: Inter, Roboto, var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
