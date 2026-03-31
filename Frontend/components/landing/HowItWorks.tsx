@@ -11,11 +11,11 @@ const steps = [
   },
   {
     title: "Complete 70% Requirement",
-    description: "Watch or engage at least 70%. Submit proof.",
+    description: "Watch or engage at least 70%.",
     icon: CheckCircle,
   },
   {
-    title: "Admin Approval & Earn Points",
+    title: "Veriefied",
     description: "After approval, points are added to your wallet.",
     icon: BadgeCheck,
   },

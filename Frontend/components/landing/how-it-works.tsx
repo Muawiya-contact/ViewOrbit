@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { title: "Sign Up", description: "Create your account as viewer, channel owner, or admin." },
+  { title: "Sign Up", description: "Create your account as viewer." },
   { title: "Engage", description: "Watch curated content and interact with platform workflows." },
-  { title: "Track Outcomes", description: "Monitor points, approvals, and operations in real time." },
+  { title: "Track Outcomes", description: "Monitor points and operations in real time." },
 ];
 
 export function HowItWorksSection() {

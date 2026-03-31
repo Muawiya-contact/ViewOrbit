@@ -46,3 +46,5 @@ export interface PayoutRequest {
   requestedAt: string;
   status: "pending" | "paid" | "rejected";
 }
+
+export * from "@/lib/types/firestore";

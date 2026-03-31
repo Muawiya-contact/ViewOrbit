@@ -10,6 +10,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, error, id, ...props }, ref) => {
     const fallbackId = React.useId();
     const inputId = id ?? fallbackId;
+    const { fdprocessedid, ...safeProps } = props as InputProps & { fdprocessedid?: string };
+
+    void fdprocessedid;
 
     return (
       <div className="space-y-2">
@@ -26,7 +29,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             error ? "border-danger" : "",
             className,
           )}
-          {...props}
+          {...safeProps}
         />
         {error ? <p className="text-xs text-danger">{error}</p> : null}
       </div>

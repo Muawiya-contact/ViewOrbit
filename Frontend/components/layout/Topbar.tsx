@@ -41,14 +41,14 @@ export function Topbar() {
     setEmail(currentUser.email);
   }, [currentUser]);
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     showToast("Logged out successfully.", "success");
     router.replace(ROUTES.LOGIN);
   };
 
-  const handleProfileSave = () => {
-    const result = updateProfile({ fullName, email });
+  const handleProfileSave = async () => {
+    const result = await updateProfile({ fullName, email });
     showToast(result.message, result.success ? "success" : "error");
     if (result.success) {
       setProfileOpen(false);

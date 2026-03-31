@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Bell, Instagram, Menu, Music2, X } from "lucide-react";
+import { Bell, Menu, X } from "lucide-react";
 import { Button } from "@/components/design-system/Button";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useWalletStore } from "@/lib/store/useWalletStore";
@@ -32,8 +32,8 @@ export function LandingNavbar() {
     return `${parts[0]?.[0] ?? "V"}${parts[1]?.[0] ?? "O"}`.toUpperCase();
   }, [currentUser?.fullName]);
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     setDropdownOpen(false);
   };
 
@@ -70,8 +70,6 @@ export function LandingNavbar() {
                 </div>
               </div>
               <Bell className="h-5 w-5 text-slate-300" />
-              <Instagram className="h-5 w-5 text-slate-300" />
-              <Music2 className="h-5 w-5 text-slate-300" />
               <div className="relative">
                 <button
                   onClick={() => setDropdownOpen((prev) => !prev)}

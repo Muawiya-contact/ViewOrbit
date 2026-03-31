@@ -1,0 +1,89 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return isSignedIn() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+
+    // Users
+    match /users/{uid} {
+      allow read: if isSelf(uid) || isAdmin();
+      allow create: if isSelf(uid) || isAdmin();
+      // Users can update limited profile fields only.
+      allow update: if (
+        isSelf(uid) &&
+        request.resource.data.uid == resource.data.uid &&
+        request.resource.data.email == resource.data.email &&
+        request.resource.data.isAdmin == resource.data.isAdmin &&
+        request.resource.data.points == resource.data.points &&
+        request.resource.data.tasksCompleted == resource.data.tasksCompleted &&
+        request.resource.data.redeemRequests == resource.data.redeemRequests
+      ) || isAdmin();
+      allow delete: if false;
+    }
+
+    // Tasks and channels are globally readable but admin-managed.
+    match /tasks/{taskId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /channels/{channelId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Current assignments
+    match /taskAssignments/{assignmentId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        request.resource.data.userId == request.auth.uid;
+      allow update: if isSignedIn() &&
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.taskId == resource.data.taskId;
+      allow delete: if false;
+    }
+
+    // Historical completions: server/admin writes only.
+    match /taskHistory/{historyId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    // Withdrawals
+    match /withdrawRequests/{withdrawId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+        request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+
+    // Platform settings and notifications
+    match /platformSettings/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+      allow write: if isAdmin();
+    }
+  }
+}

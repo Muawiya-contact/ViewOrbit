@@ -24,13 +24,13 @@ export function LandingHero() {
             Earn Rewards by Completing Social Media Tasks
           </h1>
           <p className="max-w-xl text-base text-slate-300 md:text-lg">
-            Complete verified tasks from YouTube, Instagram, and TikTok. Submit proof. Get approved. Redeem real cash.
+            Complete verified tasks from YouTube, Instagram, Facebook and TikTok. Get points. Redeem real cash.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href={ROUTES.REGISTER}>
               <Button className="h-12 px-6 text-base">Start Earning</Button>
             </Link>
-            <Link href={ROUTES.REGISTER}>
+             <Link href={ROUTES.REGISTER}> {/* It should be redirect to contact Team. */}
               <Button variant="secondary" className="h-12 px-6 text-base border border-white/20 bg-white/5 text-white hover:bg-white/10">
                 Become a Creator
               </Button>
@@ -45,7 +45,7 @@ export function LandingHero() {
           className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
         >
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">Task → Approval → Points → Cash</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">Task→ Points → Cash</p>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 ["Active Tasks", "240"],
